@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+
+.password-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-container {
+  display: flex;
+  justify-content: center; /* Center the boxes horizontally */
+  align-items: center;
+  border-radius: 20px;
+  gap: 25px; /* Adjust gap to space out the boxes */
+  margin-top: 20px; /* Add some space above the input boxes */
+  background-color: #212121;
+  height: 250px;
+  width: 500px;
+  /* border: solid, 2px, #4d6c76; */
+  box-shadow: 0px 0px 14px rgb(255, 255, 255);
+}
+
+.password-box {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #4d6c76;
+  border-radius: 4px;
+  outline: none; /* Remove the outline when the input is focused */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* Add a subtle shadow for better visual separation */
+  transition: border-color 0.3s ease-in-out;
+}
+
+.password-box:focus {
+  border-color: #2c69a9; /* Change border color when focused */
+}
+
+.enter-pass {
+  color: white;
+  font-family: "Fira Mono", monospace;
+  animation: glitch 2s linear infinite;
+  position: relative;
+  margin-bottom: 8px;
+  font-size: 75px;
+}
+
+/* Glitch Effect Code */
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.enter-pass:before,
+.enter-pass:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.enter-pass:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+.enter-pass:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}

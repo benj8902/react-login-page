@@ -1,13 +1,124 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212121;
+}
+
+h1 {
+  color: white;
+  font-family: "Fira Mono", monospace;
+  font-size: 75px;
+}
+
+p {
+  color: white;
+  font-family: "Fira Mono", monospace;
+  font-size: 30px;
+}
+
+.phone-input {
+    background: none;
+    border: none;
+    text-align: center;
+    border-bottom: 2px solid white;
+    border-radius: 0 0 8px 8px;
+    outline: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .phone-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Orbitron", sans-serif;
+    font-weight: normal;
+  }
+  
+
+.enter-phone {
+  font-family: "Orbitron", sans-serif;
+  font-weight: normal;
+  border-right: 2px solid black;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* .phone-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.send-code-btn {
+  font-family: "Orbitron", sans-serif;
+  font-size: 16px; /* Bigger text */
+  color: white; /* White text */
+  background-color: transparent; /* Transparent background */
+  margin-top: 20px;
+  margin-left: 30px;
+  border: 2px solid white; /* White border */
+  padding: 10px 20px; /* Make the button bigger */
+  border-radius: 5px; /* Optional: rounded corners */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Spaced out text for a modern look */
+  position: relative;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.send-code-btn:hover {
+  background-color: white; /* Change background on hover */
+  color: black; /* Change text color on hover */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+}
+
+.send-code-btn:focus {
+  outline: none;
+}
+
+.send-code-btn:active {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+
+/* meant to be phone container */
+.holder-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  transition: opacity 1s ease; /* Fade transition */
+  opacity: 1; /* Default state is visible */
+}
+
+/* meant to be hidden message page */
+.hidden {
+  opacity: 0; /* Hidden state */
+  pointer-events: none; /* Prevent interaction when hidden */
 }
